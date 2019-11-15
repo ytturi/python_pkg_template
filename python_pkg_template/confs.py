@@ -58,10 +58,4 @@ def init_logger(verbose, debug):
         log_level = logging.DEBUG
     config.set('LOGGING', 'level', str(logging.getLevelName(log_level)))
     logging.basicConfig(level=log_level,format=log_format)
-    logger = logging.getLogger('INIT')   
-
-def get_listen_port():
-    return config.listener().get("port", 54200)
-
-def get_listen_address():
-    return config.listener().get("address", "127.0.0.1")
+    logger = logging.getLogger('INIT')
