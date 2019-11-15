@@ -14,6 +14,7 @@ from python_pkg_template.confs import read_configs, init_logger
 def do_smth(init, config_file, verbose, debug):
     if init:
         init_configs(config_file)
+        exit(0)
     read_configs(config_file)
     init_logger(verbose, debug)
     logger = getLogger('INIT')
