@@ -1,4 +1,4 @@
-from configparser import ConfigParser
+from configparser import RawConfigParser
 from os.path import expanduser
 
 import logging
@@ -10,7 +10,7 @@ level: INFO
 format: [%(asctime)s][%(name)s][%(levelname)s]: %(message)s
 """)
 
-config = ConfigParser()
+config = RawConfigParser(inline_comment_prefixes=[';', '#'], allow_no_value=True)
 
 def read_configs(path=False):
     if not path:
@@ -41,7 +41,7 @@ def get_logging_options():
             if log_level.upper() in levels:
                 log_level = levels[log_level]
         if config.has_option(section, 'format'):
-            log_format = config.get(section, 'level')
+            log_format = config.get(section, 'format')
     else:
         config.add_section(section)
         config.set(section, 'level', str(log_level))
