@@ -1,5 +1,10 @@
-#Commands File
-# * Listener - start listening for app registration
+# -*- coding: utf-8 -*-
+# ------------------------------------------------------
+# Author: Ytturi
+# Author's e-mail: ytturi@protonmail.com
+# Version: 0.1
+# License: MIT
+# ------------------------------------------------------
 from logging import getLogger
 import click
 
