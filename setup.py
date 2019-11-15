@@ -8,7 +8,7 @@ setup(
     install_requires=[
         "click",
         "ConfigParser",
-    ]
+    ],
     entry_points='''
         [console_scripts]
         do_smth=python_pkg_template.cli:do_smth
