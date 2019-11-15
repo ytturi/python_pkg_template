@@ -18,8 +18,9 @@ def read_configs(path=False):
     else:
         config.read(path)
 
-def init_configs():
-    with open('python_pkg_template.cfg', 'w') as cfg:
+def init_configs(config_file):
+    config_filepath = config_file or 'python_pkg_template.cfg'
+    with open(config_filepath, 'w') as cfg:
         cfg.write(SAMPLE_CFG)
 
 def get_logging_options():
